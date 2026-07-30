@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>우리 데이트할래?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="card step active" id="step1">
+      <div class="emoji">💌</div>
+      <p class="small-text">꼭 물어보고 싶은 게 있어</p>
+      <h1>나랑 데이트할래?</h1>
+
+      <div class="button-area" id="buttonArea">
+        <button class="button yes-button" id="yesButton">좋아! 💖</button>
+        <button class="button no-button" id="noButton">싫어 😢</button>
+      </div>
+    </section>
+
+    <section class="card step" id="step2">
+      <div class="emoji">📅</div>
+      <h2>언제 만날까?</h2>
+
+      <label for="dateInput">날짜</label>
+      <input type="date" id="dateInput" />
+
+      <label for="timeInput">시간</label>
+      <input type="time" id="timeInput" />
+
+      <p class="message" id="dateMessage"></p>
+      <button class="button yes-button full-button" id="dateNextButton">
+        다음으로
+      </button>
+    </section>
+
+    <section class="card step" id="step3">
+      <div class="emoji">🍽️</div>
+      <h2>뭐 먹을까?</h2>
+
+      <div class="food-grid">
+        <button class="food-button" data-food="고기 🥩">고기 🥩</button>
+        <button class="food-button" data-food="파스타 🍝">파스타 🍝</button>
+        <button class="food-button" data-food="초밥 🍣">초밥 🍣</button>
+        <button class="food-button" data-food="카페 ☕">카페 ☕</button>
+        <button class="food-button" data-food="치킨 🍗">치킨 🍗</button>
+        <button class="food-button" data-food="아무거나 좋아 💕">아무거나 💕</button>
+      </div>
+    </section>
+
+    <section class="card step" id="step4">
+      <div class="emoji">🎉</div>
+      <h2>데이트 약속 완료!</h2>
+
+      <div class="result-box">
+        <p><strong>날짜</strong><span id="resultDate"></span></p>
+        <p><strong>시간</strong><span id="resultTime"></span></p>
+        <p><strong>메뉴</strong><span id="resultFood"></span></p>
+      </div>
+
+      <p class="final-text">약속한 거다! 늦으면 안 돼 💗</p>
+      <button class="button restart-button full-button" id="restartButton">
+        처음부터 다시 하기
+      </button>
+    </section>
+  </main>
+
+  <div class="heart-container" id="heartContainer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
