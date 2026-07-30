@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>예지누나 우리 만날래?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <!-- 1. 첫 질문 -->
+    <section class="card step active" id="step1">
+      <div class="emoji">💌</div>
+      <p class="small-text">꼭 물어보고 싶은 게 있어</p>
+      <h1>예지누나, 나랑 만나서 놀래?</h1>
+
+      <div class="button-area" id="buttonArea">
+        <button class="button yes-button" id="yesButton">좋아! 💖</button>
+        <button class="button no-button" id="noButton">싫어 😢</button>
+      </div>
+    </section>
+
+    <!-- 2. 좋아를 눌렀을 때 나오는 반응 화면 -->
+    <section class="card step reaction-step" id="step2">
+      <div class="reaction-space"></div>
+      <h2>잠시만.. 좋다고?? 😭</h2>
+      <p class="reaction-text">난 네가 싫다고 할 줄 알았어 ...</p>
+      <button class="button yes-button reaction-button" id="surpriseNextButton">
+        응응응
+      </button>
+    </section>
+
+    <!-- 3. 날짜와 시간 선택 -->
+    <section class="card step" id="step3">
+      <div class="emoji">📅</div>
+      <h2>언제 만날까?</h2>
+
+      <label for="dateInput">날짜</label>
+      <input type="date" id="dateInput" />
+
+      <label for="timeInput">시간</label>
+      <input type="time" id="timeInput" />
+
+      <p class="message" id="dateMessage"></p>
+      <button class="button yes-button full-button" id="dateNextButton">
+        다음으로
+      </button>
+    </section>
+
+    <!-- 4. 메뉴 선택 -->
+    <section class="card step" id="step4">
+      <div class="emoji">🍽️</div>
+      <h2>뭐 먹을까?</h2>
+
+      <div class="food-grid">
+        <button class="food-button" data-food="고기 🥩">고기 🥩</button>
+        <button class="food-button" data-food="파스타 🍝">파스타 🍝</button>
+        <button class="food-button" data-food="초밥 🍣">초밥 🍣</button>
+        <button class="food-button" data-food="카페 ☕">카페 ☕</button>
+        <button class="food-button" data-food="치킨 🍗">치킨 🍗</button>
+        <button class="food-button" data-food="아무거나 좋아 💕">아무거나 💕</button>
+      </div>
+    </section>
+
+    <!-- 5. 결과 및 캡처 -->
+    <section class="card step result-step" id="step5">
+      <div id="captureArea" class="capture-area">
+        <div class="emoji">🎉</div>
+        <h2>데이트 약속 완료!</h2>
+
+        <div class="result-box">
+          <p><strong>날짜</strong><span id="resultDate"></span></p>
+          <p><strong>시간</strong><span id="resultTime"></span></p>
+          <p><strong>메뉴</strong><span id="resultFood"></span></p>
+        </div>
+
+        <p class="final-text">약속한 거다! 늦으면 안 돼 💗</p>
+        <p class="signature">예지누나에게 보내는 약속장 💌</p>
+      </div>
+
+      <button class="button share-button full-button" id="shareButton">
+        캡처해서 보내기 📤
+      </button>
+
+      <button class="button restart-button full-button" id="restartButton">
+        처음부터 다시 하기
+      </button>
+
+      <p class="share-message" id="shareMessage"></p>
+    </section>
+  </main>
+
+  <div class="heart-container" id="heartContainer"></div>
+
+  <!-- 결과 화면을 이미지로 만드는 라이브러리 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
